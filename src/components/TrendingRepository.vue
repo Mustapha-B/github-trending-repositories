@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-infinite-scroll="loadRepositories" infinite-scroll-disabled="busy">
     <div class="repository" v-for="repository in repositories" :key="repository.id">
       <h1> {{ repository.name }} </h1>
     </div>
@@ -15,24 +15,30 @@ export default {
   data() {
     return {
       repositories: [],
+      page: 1,
+      busy: false,
     };
   },
   methods: {
-    async getInitialRepositories() {
+    async loadRepositories() {
       const createdAt = moment().subtract(30, 'days').format('YYYY-MM-DD');
+      this.busy = true;
 
       try {
-        const items = await RepositoryService.search(createdAt, 1);
+        const items = await RepositoryService.search(createdAt, this.page);
         items.forEach(item => this.repositories.push(item));
+        this.page += 1;
       } catch (e) {
         if (e instanceof SearchError) {
           console.log(e.message);
         }
       }
+
+      this.busy = false;
     },
   },
-  beforeMount() {
-    this.getInitialRepositories();
+  created() {
+    this.loadRepositories();
   },
 };
 </script>
