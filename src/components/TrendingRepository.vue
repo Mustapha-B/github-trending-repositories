@@ -2,7 +2,10 @@
   <v-container grid-list-md text-xs-left>
     <div v-infinite-scroll="loadRepositories" infinite-scroll-disabled="busy">
       <v-layout row wrap>
-        <v-flex xs12 v-for="repository in repositories" :key="repository.id">
+        <v-flex xs12
+                v-for="repository in repositories" :key="repository.id"
+                data-aos="slide-up" data-aos-easing="ease-out-back"
+        >
           <v-card class="repository-card">
             <v-layout row wrap>
               <v-flex xs4 sm3 md2>
