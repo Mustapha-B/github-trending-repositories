@@ -9,27 +9,29 @@
                 <v-img :src="repository.owner.avatar_url"></v-img>
               </v-flex>
               <v-flex xs8 sm9 md10>
-                <v-card-title primary-title>
-                  <div>
-                    <h3 class="headline mb-0"> {{ repository.name }} </h3>
-                    <div> {{ repository.description }} </div>
-                  </div>
-                </v-card-title>
-                <v-card-actions>
-                  <v-layout row wrap>
-                    <v-flex>
-                      <v-btn flat color="orange">Stars: {{ repository.stargazers_count }} </v-btn>
-                      <v-btn flat color="orange">Issues: {{ repository.open_issues_count }} </v-btn>
-                      <v-btn
-                              flat
-                              color="orange"
-                      >
-                        Submitted {{ moment(repository.created_at).fromNow() }}
-                        by {{ repository.owner.login }}
-                      </v-btn>
-                    </v-flex>
-                  </v-layout>
-                </v-card-actions>
+                <v-layout column justify-space-between fill-height>
+                  <v-card-title primary-title>
+                    <div>
+                      <h3 class="headline mb-0"> {{ repository.name }} </h3>
+                      <div> {{ repository.description }} </div>
+                    </div>
+                  </v-card-title>
+                  <v-card-actions>
+                    <v-layout row wrap>
+                      <v-flex>
+                        <v-btn color="info">Stars: {{ repository.stargazers_count }} </v-btn>
+                        <v-btn color="info">Issues: {{ repository.open_issues_count }} </v-btn>
+                        <v-btn
+                                flat
+                                color="info"
+                        >
+                          Submitted {{ moment(repository.created_at).fromNow() }}
+                          by {{ repository.owner.login }}
+                        </v-btn>
+                      </v-flex>
+                    </v-layout>
+                  </v-card-actions>
+                </v-layout>
               </v-flex>
             </v-layout>
           </v-card>

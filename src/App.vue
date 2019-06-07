@@ -1,16 +1,11 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Github</span>
-        <span class="font-weight-light">Trending Repositories</span>
-      </v-toolbar-title>
+    <v-toolbar color="black" dark app>
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-title>GitHub Trending Repos</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat>
-        <router-link to="/">Home</router-link>
-      </v-btn>
-      <v-btn flat>
-        <router-link to="/about">About</router-link>
+      <v-btn icon>
+        <v-icon>search</v-icon>
       </v-btn>
     </v-toolbar>
 
