@@ -15,7 +15,7 @@ const RepositoryService = {
    */
   async search(createdAt, page) {
     try {
-      const response = await ApiService.get('/search/repositories', {
+      const response = await ApiService.get('https://api.github.com/search/repositories', {
         q: `created:>${createdAt}`,
         sort: 'stars',
         order: 'desc',
