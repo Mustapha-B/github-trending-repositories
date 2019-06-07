@@ -1,9 +1,42 @@
 <template>
-  <div class="container" v-infinite-scroll="loadRepositories" infinite-scroll-disabled="busy">
-    <div class="repository" v-for="repository in repositories" :key="repository.id">
-      <h1> {{ repository.name }} </h1>
+  <v-container grid-list-md text-xs-left>
+    <div v-infinite-scroll="loadRepositories" infinite-scroll-disabled="busy">
+      <v-layout row wrap>
+        <v-flex xs12 v-for="repository in repositories" :key="repository.id">
+          <v-card class="repository-card">
+            <v-layout row wrap>
+              <v-flex xs4 sm3 md2>
+                <v-img :src="repository.owner.avatar_url"></v-img>
+              </v-flex>
+              <v-flex xs8 sm9 md10>
+                <v-card-title primary-title>
+                  <div>
+                    <h3 class="headline mb-0"> {{ repository.name }} </h3>
+                    <div> {{ repository.description }} </div>
+                  </div>
+                </v-card-title>
+                <v-card-actions>
+                  <v-layout row wrap>
+                    <v-flex>
+                      <v-btn flat color="orange">Stars: {{ repository.stargazers_count }} </v-btn>
+                      <v-btn flat color="orange">Issues: {{ repository.open_issues_count }} </v-btn>
+                      <v-btn
+                              flat
+                              color="orange"
+                      >
+                        Submitted {{ moment(repository.created_at).fromNow() }}
+                        by {{ repository.owner.login }}
+                      </v-btn>
+                    </v-flex>
+                  </v-layout>
+                </v-card-actions>
+              </v-flex>
+            </v-layout>
+          </v-card>
+        </v-flex>
+      </v-layout>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -44,5 +77,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .repository-card {
+    margin-bottom: 10px;
+  }
 </style>

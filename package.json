@@ -14,7 +14,8 @@
     "moment": "^2.24.0",
     "vue": "^2.6.10",
     "vue-infinite-scroll": "^2.0.2",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "vuetify": "^1.5.14"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
