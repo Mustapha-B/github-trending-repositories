@@ -45,10 +45,12 @@ yarn run test:unit
 * [moment](https://momentjs.com/docs/) - Used to manipulate dates
 * [vue-infinite-scroll](https://github.com/ElemeFE/vue-infinite-scroll) - Used to implement infinite scroll
 * [Vuetify](https://vuetifyjs.com/en/) - The vue UI framework used
+* [AOS](https://michalsnik.github.io/aos/) - Used to add an animate on scroll effect
 
 ## TODO
 - [ ] Handle API errors and display a nice message to the user
 - [ ] Add a small loader while waiting data fetch
+- [ ] Image lazy loading
 - [ ] Handle mobile view
 - [ ] Add unit tests
 - [ ] Deploy somewhere
