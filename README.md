@@ -1,34 +1,58 @@
-# github-trending-repositories
-
+# GitHub trending repositories
+A small webapp that lists the most starred Github repositories that were created in the last 30 days. The data is fetched directly from the official GitHub API.
 ## Project setup
+### Using Docker Compose
+Use `docker-compose` to boot up dockerized environment for development
+```
+docker-compose up --build
+```
+You should now be able to access the application on localhost:8080
+
+To run any command inside your container
+```
+docker-compose exec frontend [YOUR COMMAND]
+```
+
+To add another node package
+```
+docker-compose exec frontend yarn add <package-name>
+```
+
+To run unit tests
+```
+docker-compose exec yarn run test:unit
+```
+
+### Using Yarn
+Install dependencies
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+Compile and hot-reload for development
 ```
 yarn run serve
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Run your unit tests
+Run unit tests
 ```
 yarn run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Built With
+* [Vue.js](https://vuejs.org/) - The javascript framework used
+* [Axios](https://github.com/axios/axios) - Used to make http request
+* [moment](https://momentjs.com/docs/) - Used to manipulate dates
+* [vue-infinite-scroll](https://github.com/ElemeFE/vue-infinite-scroll) - Used to implement infinite scroll
+* [Vuetify](https://vuetifyjs.com/en/) - The vue UI framework used
+
+## TODO
+- [ ] Handle API errors and display a nice message to the user
+- [ ] Add a small loader while waiting data fetch
+- [ ] Handle mobile view
+- [ ] Add unit tests
+- [ ] Deploy somewhere
+
+## Licencse
+This project is freely distributable under the terms of MIT license.
+
