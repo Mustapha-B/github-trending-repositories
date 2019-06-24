@@ -15,7 +15,9 @@
                 <v-layout column justify-space-between fill-height>
                   <v-card-title primary-title>
                     <div>
-                      <h3 class="headline mb-0"> {{ repository.name }} </h3>
+                      <h3 class="headline mb-0">
+                        <a :href="repository.html_url" target="_blank">{{ repository.name }}</a>
+                      </h3>
                       <div> {{ repository.description }} </div>
                     </div>
                   </v-card-title>
