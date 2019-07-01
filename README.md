@@ -20,7 +20,7 @@ docker-compose exec frontend yarn add <package-name>
 
 To run unit tests
 ```
-docker-compose exec yarn run test:unit
+docker-compose exec frontend yarn run test:unit
 ```
 
 ### Using Yarn
@@ -53,8 +53,9 @@ yarn run test:unit
 - [ ] Image lazy loading
 - [ ] Handle mobile view
 - [ ] Add unit tests
+_ [ ] Filter repositories based on the main language they're written in
 - [ ] Deploy somewhere
 
-## Licencse
+## License
 This project is freely distributable under the terms of MIT license.
 
