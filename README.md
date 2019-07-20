@@ -1,5 +1,7 @@
 # GitHub trending repositories
 A small webapp that lists the most starred Github repositories that were created in the last 30 days. The data is fetched directly from the official GitHub API.
+
+The app is hosted in Netlify under https://github-trending-repos.netlify.com
 ## Project setup
 ### Using Docker Compose
 Use `docker-compose` to boot up dockerized environment for development
@@ -53,8 +55,8 @@ yarn run test:unit
 - [ ] Image lazy loading
 - [ ] Handle mobile view
 - [ ] Add unit tests
-_ [ ] Filter repositories based on the main language they're written in
-- [ ] Deploy somewhere
+- [ ] Filter repositories based on the main language they're written in
+- [x] Deploy somewhere
 
 ## License
 This project is freely distributable under the terms of MIT license.
